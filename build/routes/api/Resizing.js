@@ -24,15 +24,14 @@ function validateQueryData(params) {
     return __awaiter(this, void 0, void 0, function* () {
         let message = '';
         if (!params.height || !params.width || !params.name) {
-            message = "name , width and height is needed data";
+            message = 'name , width and height is needed data';
             return message;
         }
         const width = parseInt(params.width);
         const height = parseInt(params.height);
-        const name = params.name;
-        //check that the width and height is positve integer number
-        if (Number.isNaN(width) || Number.isNaN(height) || width < 0 || height < 0) {
-            message = "Width and height must be positive integer number";
+        //check that the width and height is absolute positve integer number
+        if (Number.isNaN(width) || Number.isNaN(height) || width < 1 || height < 1) {
+            message = 'Width and Height must be absolute positive integer number';
             return message;
         }
         return false;
@@ -56,7 +55,7 @@ function createNewImg(params) {
                 width: parseInt(params.width),
                 height: parseInt(params.height),
                 from: oldPath,
-                to: newPath
+                to: newPath,
             });
         }
     });
@@ -65,11 +64,13 @@ exports.createNewImg = createNewImg;
 //check that the imgname is avilable
 function isAvilable(params) {
     return __awaiter(this, void 0, void 0, function* () {
-        if (!params.name || params.name.includes('.') || params.name.includes('jpg')) {
+        if (!params.name ||
+            params.name.includes('.') ||
+            params.name.includes('jpg')) {
             return false;
         }
         else {
-            let content = fs_1.default.readdirSync(imgPath);
+            const content = fs_1.default.readdirSync(imgPath);
             return content.includes(`${params.name}.jpg`);
         }
     });

@@ -4,6 +4,9 @@ lint: npm run lint
 test : npm run test
 statr :npm run start // open nodemon ..split the terminal
 
+prettier : npm run format
+
+
 local server
 
 consoled log if the server run successfully

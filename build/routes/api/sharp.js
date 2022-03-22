@@ -23,7 +23,7 @@ function resizing(params) {
             return params.to;
         }
         catch (e) {
-            return "error at resizing the photo";
+            return 'error at resizing the photo';
         }
     });
 }

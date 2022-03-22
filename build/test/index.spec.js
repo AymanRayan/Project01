@@ -24,10 +24,10 @@ describe('test the endpoint', () => {
 describe('test resizing function', () => {
     it('invalid height value', () => __awaiter(void 0, void 0, void 0, function* () {
         const err = yield (0, Resizing_1.createNewImg)({
-            name: 'ayman',
+            name: 'x',
             width: '100',
-            height: '-100'
+            height: '-100',
         });
-        expect(err).toBeNull();
+        expect(err).not.toBeNull();
     }));
 });

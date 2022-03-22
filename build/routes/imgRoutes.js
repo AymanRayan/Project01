@@ -25,11 +25,11 @@ imgs.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             res.sendFile(location);
         }
         else {
-            res.send("There is an error in Retriving data");
+            res.send('There is an error in Retriving data');
         }
     }
     else {
-        res.send('There is no file for this name pick one from IMAGES folder or put your img there then use the name without it\'s extention ... Try again');
+        res.send("There is no file for this name pick one from IMAGES folder or put your img there then use the name without it's extention ... Try again");
     }
 }));
 exports.default = imgs;
