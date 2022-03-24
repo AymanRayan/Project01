@@ -15,7 +15,10 @@ const imgs = (0, express_1.Router)();
 imgs.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const message = yield (0, Resizing_1.validateQueryData)(req.query);
     if (message) {
-        res.send(message);
+        res.send({
+            status: 400,
+            message: message
+        });
     }
     const isAccepted = yield (0, Resizing_1.isAvilable)(req.query);
     if (isAccepted) {
@@ -25,11 +28,17 @@ imgs.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             res.sendFile(location);
         }
         else {
-            res.send('There is an error in Retriving data');
+            res.send({
+                status: 500,
+                message: 'There is an error in Retriving data'
+            });
         }
     }
     else {
-        res.send("There is no file for this name pick one from IMAGES folder or put your img there then use the name without it's extention ... Try again");
+        res.send({
+            status: 404,
+            message: "There is no file for this name pick one from IMAGES folder or put your img there then use the name without it's extention ... Try again"
+        });
     }
 }));
 exports.default = imgs;
