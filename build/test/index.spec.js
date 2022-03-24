@@ -20,6 +20,7 @@ describe('test the endpoint', () => {
     it('using endpoint without name or width or height parameter return 400', () => __awaiter(void 0, void 0, void 0, function* () {
         console.log("here");
         yield req.get('/images').expect(200);
+        console.log("hennna");
     }));
 });
 describe('test resizing function', () => {

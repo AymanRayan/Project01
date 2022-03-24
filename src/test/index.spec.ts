@@ -4,7 +4,7 @@ import { createNewImg } from '../routes/api/Resizing';
 const req = supertest(app);
 describe('test the endpoint', () => {
   it('using endpoint without name or width or height parameter return 400', async () => {
-    console.log("here");
+    
       await req.get('/images').expect(200);
       
   });
