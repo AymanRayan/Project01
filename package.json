@@ -1,7 +1,7 @@
 {
   "name": "live-session",
   "version": "1.0.0",
-  "description": "",
+  "description": "install : npm install",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -9,7 +9,7 @@
     "lint:f": "eslint src/**/*.ts --fix",
     "test": "npx tsc && npm run build && jasmine",
     "start": "nodemon src/index.ts",
-    "format":"prettier --write src/**/*.ts"
+    "format": "prettier --write src/**/*.ts"
   },
   "keywords": [],
   "author": "",
@@ -35,5 +35,13 @@
   "dependencies": {
     "express": "^4.17.3",
     "sharp": "^0.30.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AymanRayan/Project01.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AymanRayan/Project01/issues"
+  },
+  "homepage": "https://github.com/AymanRayan/Project01#readme"
 }

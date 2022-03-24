@@ -18,7 +18,8 @@ const Resizing_1 = require("../routes/api/Resizing");
 const req = (0, supertest_1.default)(index_1.default);
 describe('test the endpoint', () => {
     it('using endpoint without name or width or height parameter return 400', () => __awaiter(void 0, void 0, void 0, function* () {
-        yield req.get('/images').expect(400);
+        console.log("here");
+        yield req.get('/images').expect(200);
     }));
 });
 describe('test resizing function', () => {

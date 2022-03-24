@@ -2,10 +2,11 @@ import supertest from 'supertest';
 import app from '../index';
 import { createNewImg } from '../routes/api/Resizing';
 const req = supertest(app);
-
 describe('test the endpoint', () => {
   it('using endpoint without name or width or height parameter return 400', async () => {
-    await req.get('/images').expect(400);
+    console.log("here");
+      await req.get('/images').expect(200);
+      
   });
 });
 
