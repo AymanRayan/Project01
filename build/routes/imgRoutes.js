@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const Resizing_1 = require("./api/Resizing");
 const imgs = (0, express_1.Router)();
-imgs.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+imgs.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const message = yield (0, Resizing_1.validateQueryData)(req.query);
     if (message) {
         res.send(message);

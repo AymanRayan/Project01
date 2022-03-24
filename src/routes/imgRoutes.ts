@@ -8,7 +8,7 @@ import {
 
 const imgs: Router = Router();
 
-imgs.get('/', async (req: Request, res: Response) => {
+imgs.get('/images', async (req: Request, res: Response) => {
   const message: string | boolean = await validateQueryData(req.query);
   if (message) {
     res.send(message);

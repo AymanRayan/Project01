@@ -1,12 +1,14 @@
 import supertest from 'supertest';
 import app from '../index';
 import { createNewImg } from '../routes/api/Resizing';
-const req = supertest(app);
-describe('test the endpoint', () => {
-  it('using endpoint without name or width or height parameter return 400', async () => {
-    
-      await req.get('/images').expect(200);
-      
+
+
+describe('test the / endpoint', ():void => {
+  it('using endpoint that doesn\'t exists return 404  ', async (): Promise<void> => {
+      const req = supertest(app);
+      const res = await req.get('/');
+      expect(res.status).toBe(404);
+   
   });
 });
 

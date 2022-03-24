@@ -16,7 +16,7 @@ const express_1 = __importDefault(require("express"));
 const imgRoutes_1 = __importDefault(require("./routes/imgRoutes"));
 const app = (0, express_1.default)();
 const PORT = 3000;
-app.use('/images', imgRoutes_1.default);
+app.use(imgRoutes_1.default);
 app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`The Server at http://localhost:${PORT}`);
 }));
