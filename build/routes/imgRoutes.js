@@ -15,10 +15,11 @@ const imgs = (0, express_1.Router)();
 imgs.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const message = yield (0, Resizing_1.validateQueryData)(req.query);
     if (message) {
-        res.send({
-            status: 400,
+        res.status(401).send({
+            status: 401,
             message: message
         });
+        return null;
     }
     const isAccepted = yield (0, Resizing_1.isAvilable)(req.query);
     if (isAccepted) {
@@ -40,5 +41,6 @@ imgs.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             message: "There is no file for this name pick one from IMAGES folder or put your img there then use the name without it's extention ... Try again"
         });
     }
+    return null;
 }));
 exports.default = imgs;
